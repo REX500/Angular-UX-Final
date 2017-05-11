@@ -1,0 +1,26 @@
+<div class="top-home">
+  <div class="top-trip">
+    <div class="item" *ngFor="let recipe of recipes">
+      <div class="mask">
+        <figure>
+          <figcaption>
+            <div class="figure-h">{{recipe.name}}</div>
+            <br>
+            <p (click)="recipeDetail(recipe)"><em><a>see more</a></em></p>
+            <br>
+            <br>
+            <div class="adminSection">
+              <p><em class="recipeEdit"><a (click)="recipeEdit(recipe)">Modify</a></em></p>
+              <p><em><a (click)="delete(recipe)">Delete</a></em></p>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="item-inner">
+        <img class="cardImage" src={{recipe.imageUrl}}/>
+      </div>
+    </div>
+  </div>
+</div>
+

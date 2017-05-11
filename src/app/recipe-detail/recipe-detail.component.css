@@ -1,0 +1,150 @@
+strong {
+  font-weight: 500;
+}
+
+h3 {
+  background: #9CCC65;
+  padding: 1.6em 54px;
+  color: #fff;
+  font-weight: normal;
+  font-size: 2em;
+  margin: 0;
+}
+
+h3 small {
+  display: block;
+  font-size: 16px;
+  margin-top: 8px;
+  font-style: italic;
+  color: #DCEDC8;
+}
+
+h4 {
+  font-weight: normal;
+  font-size: 1.2em;
+  margin-top: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+.recipe {
+  background: #fff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.recipe img {
+  max-height: 400px;
+}
+
+.recipe-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.top-home {
+  clear: both;
+  background: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px 0 0 -10px;
+  min-height: 90vh;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 1 50%;
+  padding: 2em 2em 2em 2em;
+  background: #f5f5f5;
+}
+
+.ingredientsSection {
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+  align-self: center;
+}
+
+.btn {
+  padding: 5px 10px;
+  border-radius: 3px;
+  background-color: #8BC34A;
+  color: white;
+  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.3);
+  bottom: 0;
+  right: 0;
+  float: right;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: #b8de84;
+  color: black;
+}
+
+.objectFill {
+  object-fit: fill;
+  width: 400px;
+  height: 200px;
+  display: flex;
+  align-self: center;
+}
+
+.plan {
+  flex: 1 1 50%;
+  min-width: 300px;
+  display: flex;
+  border-left: 3px solid #c0e3b1;
+}
+
+@media only screen and (max-width: 900px) {
+  .objectFill .ingredientsSection {
+    /*TODO - change the objectFill and ingredientsSection width to be calculable in regard to resizing the window */
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .recipe-flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .plan {
+    border-left: 0;
+  }
+}
+
+p {
+  margin: 60px 30px 30px 30px;
+  text-align: left;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.ingredients input {
+  vertical-align: middle !important;
+}
+
+.ingredients label span {
+  vertical-align: middle !important;
+}
+
+.ingredients label {
+  display: block !important;
+  padding-right: 10px !important;
+  padding-left: 22px !important;
+  text-indent: -10px !important;
+}
+
+input[type=checkbox], input[type=radio] {
+  margin: 0 6px 0 0;
+  line-height: normal;
+}
+
+label {
+  font-weight: normal;
+}

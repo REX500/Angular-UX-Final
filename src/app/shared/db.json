@@ -1,0 +1,66 @@
+{
+  "recipes": [
+    {
+      "name": "Chicken Kabobs on the Grill",
+      "imageUrl": "http://2.bp.blogspot.com/-Q9bPs8X6C4o/U4cLPhyjrsI/AAAAAAAAAv8/x8qB5pA6Poc/s1600/gm-diet-chicken+kebabs-recipe.jpg",
+      "description": "A delicious family grill recipe",
+      "directions": "1) In a bowl, whisk together the lemon juice, orange juice, lemon zest, honey, garlic, rosemary, olive oil, salt and pepper.\n\n2) Add the chicken pieces to a large resealable plastic bag, pour the marinade over them, seal it up making sure to squeeze out all the extra air.\n\n3) Let them marinate in the fridge for about 45 minutes.\n\n4) To make the kabobs, alternate the chicken with the onion pieces (up to you how you like to skewer them) on metal skewers (if you’re using bamboo skewers, make sure to soak them for 1 hour before cooking otherwise they will burn), depending on how much you put on each one, it will vary how many you get at the end.\n\n5) Preheat the grill pan to medium heat and cook the kabobs for about 3 minutes on all sides. ",
+      "ingredients": [
+        {
+          "name": "lb. boneless skinless chicken breasts, cut into 1-1/2 inch pieces",
+          "amount": "1"
+        },
+        {
+          "name": "each red, yellow and green pepper, cut into 1-1/2 inch pieces",
+          "amount": "1"
+        },
+        {
+          "name": "Tbsp of Honey",
+          "amount": "1"
+        },
+        {
+          "name": "Cloves of Garlic",
+          "amount": "4"
+        },
+        {
+          "name": "Tbsp of Olive Oil",
+          "amount": "2"
+        },
+        {
+          "name": "tsp of Freshly Chopped Rosemary",
+          "amount": "2"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "name": "BBQ Chicken",
+      "imageUrl": "http://assets.kraftfoods.com/recipe_images/opendeploy/94332_640x428.jpg",
+      "description": "Nada",
+      "directions": "Nada",
+      "ingredients": [
+        {
+          "name": "Tbsp BBQ Sauce",
+          "amount": "1"
+        }
+      ],
+      "id": 5
+    },
+    {
+      "name": "sd",
+      "imageUrl": "",
+      "description": "",
+      "directions": "",
+      "ingredients": [],
+      "id": 6
+    },
+    {
+      "name": "s",
+      "imageUrl": "",
+      "description": "",
+      "directions": "",
+      "ingredients": [],
+      "id": 7
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+<div class="top-home">
+  <div *ngIf="recipe" class="recipe">
+
+    <h3>{{recipe.name}}
+      <small>{{recipe.description}}</small>
+
+    </h3>
+    <div class="recipe-flex">
+
+      <div class="description">
+
+        <img class="objectFill" src="{{recipe.imageUrl}}">
+
+        <div class="ingredientsSection">
+          <h4>Ingredients:</h4>
+
+          <div *ngFor="let ingredient of recipe.ingredients" class="ingredients">
+            <label for="ingredient"> <input type="checkbox" id="ingredient" class="ingredientCheckbox"/><span>{{ingredient.amount}}</span>
+              {{ingredient.name}} </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="plan">
+        <p>{{recipe.directions}}</p>
+      </div>
+
+    </div>
+    <h3>
+      <button class="btn" (click)="goBack()">Back to recipes</button>
+    </h3>
+  </div>
+</div>
