@@ -18,7 +18,7 @@
                 </div>
                 <div class="group space">
                   <label for="ingredient-name">Name</label>
-                  <input id="ingredient-name" type="text" placeholder="Ingredient" #nameIngredient/>
+                  <input id="ingredient-name" type="text" placeholder="Name" #nameIngredient/>
                   <span class="highlight"></span>
                   <span class="bar"></span>
                 </div>
@@ -28,7 +28,7 @@
             </form>
             <ul *ngFor="let ingredient of ingredients" class="ingredients">
               <li>{{ingredient.amount}} {{ingredient.name}}</li>
-              <i class="fa fa-minus-circle fa-3x" aria-hidden="true" (click)="deleteIngredient(ingredient)"></i>
+              <i class="fa fa-times-circle fa-3x" aria-hidden="true" (click)="deleteIngredient(ingredient)"></i>
             </ul>
           </div>
         </div>
@@ -86,7 +86,7 @@
                 </div>
                 <div class="group space">
                   <label for="ingredientName">Name</label>
-                  <input id="ingredientName" type="text" placeholder="Ingredient" #name/>
+                  <input id="ingredientName" type="text" placeholder="Name" #name/>
                   <span class="highlight"></span>
                   <span class="bar"></span>
                 </div>
@@ -96,7 +96,7 @@
             </form>
             <ul *ngFor="let ingredient of ingredients" class="ingredients">
               <li>{{ingredient.amount}} {{ingredient.name}}</li>
-              <i class="fa fa-minus-circle fa-3x" aria-hidden="true" (click)="deleteIngredient(ingredient)"></i>
+              <i class="fa fa-times-circle fa-3x" aria-hidden="true" (click)="deleteIngredient(ingredient)"></i>
             </ul>
           </div>
         </div>

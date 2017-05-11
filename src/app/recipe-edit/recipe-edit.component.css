@@ -1,5 +1,5 @@
 h2 {
-  margin-bottom: 65px;
+  margin-bottom: 40px;
   color: rgba(0, 0, 0, 0.8);
 }
 
@@ -16,7 +16,8 @@ form {
 .group {
   position: relative;
   margin-bottom: 35px;
-  width: 100%
+  width: 70%;
+  align-self: center;
 }
 
 input {
@@ -60,8 +61,9 @@ textarea:focus label {
 }
 
 li {
-  font-size: 24px;
+  font-size: 18px;
   margin-right: 15px;
+  width: 92%;
 }
 
 .bar {
@@ -122,6 +124,7 @@ ul {
   text-align: left;
   -webkit-padding-start: 0px;
   display: flex;
+  width: 100%;
 }
 
 .recipe-flex {
@@ -134,15 +137,15 @@ ul {
   background: #ffffff;
   display: flex;
   flex-wrap: wrap;
-  margin: -10px 0 0 -10px;
-  min-height: 90vh;
+  min-height: 100vh;
 }
 
 .description {
   display: flex;
   flex-direction: column;
   flex: 1 1 50%;
-  padding: 2.5em 2em 2em 7em;
+  padding-top: 2.5em;
+  padding-bottom: 5em;
   background: #f5f5f5;
 }
 
@@ -151,7 +154,7 @@ ul {
   flex-direction: column;
   justify-content: center;
   flex: 1 1 50%;
-  padding: 2em 2em 2em 2em;
+  padding-top: 2em;
   background: #f5f5f5;
 
 }
@@ -175,17 +178,15 @@ input {
 
 .objectFill {
   object-fit: fill;
-  width: 500px;
-  height: 330px;
+  width: 70%;
+  height: 45%;
   display: flex;
-
+  align-self: center;
 }
 
 .ingredientsSection {
   display: flex;
-  width: 500px;
   flex-direction: column;
-  align-self: center;
 }
 
 .space {
@@ -204,11 +205,15 @@ input {
   cursor: pointer;
 }
 
-.fa-minus-circle {
+.fa-times-circle {
   color: red;
   display: flex;
   align-self: center;
   cursor: pointer;
+  width: 8%;
+  justify-content: flex-end;
+  margin-left: 5px;
+  margin-top: -5px;
 }
 
 @media only screen and (max-width: 900px) {
@@ -217,7 +222,4 @@ input {
     flex-direction: column;
   }
 
-  .description {
-    padding: 2.5em 2em 2em 5em;
-  }
 }
