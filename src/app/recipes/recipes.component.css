@@ -86,7 +86,7 @@ body {
   display: inline-block;
   margin: 10px 0 0 10px;
   flex-grow: 1;
-  width: calc(100% * (1 / 4) - 10px - 1px)
+  width: calc(100% * (1 / 4) - 10px)
 }
 
 .top-trip .item:before {
@@ -281,6 +281,9 @@ a.button:hover::after {
     width: 44%;
     margin: 1rem 3%;
   }
+  .filterRecipes {
+    padding-right: 23px;
+  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -313,6 +316,10 @@ a.button:hover::after {
     background: #9CCC65;
   }
 
+  .filterRecipes {
+    padding-right: 0;
+  }
+
   .top-trip .item {
     width: 96%;
   }
@@ -327,5 +334,11 @@ a.button:hover::after {
 .adminSection {
   display: flex;
   justify-content: space-around;
+}
+.filterRecipes {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  max-height: 30px;
 }
 

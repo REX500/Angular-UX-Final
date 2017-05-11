@@ -9,7 +9,8 @@ import {Recipe} from '../shared/recipe';
   styleUrls: ['./recipes.component.css']
 })
 export class RecipesComponent implements OnInit {
-  recipes: Recipe[];
+  recipes: Recipe[] = [];
+  listFilter: string;
 
   constructor(private recipeService: RecipeService,
               private router: Router) {
@@ -21,13 +22,16 @@ export class RecipesComponent implements OnInit {
   }
 
   recipeDetail(recipe: Recipe): void {
-    let link = ['/detail', recipe.id];
+    const link = ['/detail', recipe.id];
     this.router.navigate(link);
   }
 
   recipeEdit(recipe: Recipe): void {
-    let link = ['/edit', recipe.id];
+    const link = ['/edit', recipe.id];
     this.router.navigate(link);
+  }
+  addRecipe(name: string, imageUrl: string, description: string, directions: string, ingredients: any[]) {
+    this.recipeService.addRecipe(name, imageUrl, description, directions, ingredients).subscribe(recipe => this.recipes.push(recipe));
   }
 
   delete(recipe: Recipe): void {

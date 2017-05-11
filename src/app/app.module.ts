@@ -17,13 +17,15 @@ import {RecipeEditComponent} from './recipe-edit/recipe-edit.component';
 import {RecipesComponent} from './recipes/recipes.component';
 import {RecipeService} from './shared/recipe.service';
 import {Routing} from './app.routing';
+import {RecipeFilterPipe} from './recipes/recipe-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipeDetailComponent,
     RecipeEditComponent,
-    RecipesComponent
+    RecipesComponent,
+    RecipeFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,7 @@ import {Routing} from './app.routing';
     HttpModule,
     Routing
   ],
-  providers: [RecipeService],
+  providers: [RecipeService, RecipesComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {

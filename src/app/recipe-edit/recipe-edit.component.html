@@ -68,7 +68,7 @@
   </form>
 </div>
 <div class="top-home" *ngIf="!selectedRecipe">
-  <form action="" (ngSubmit)="onSubmit(recipeForm.value)" [formGroup]="recipeForm" *ngIf="!selectedRecipe">
+  <form action="" [formGroup]="recipeForm" *ngIf="!selectedRecipe" #formR>
     <div class="recipe-flex">
       <div class="description">
         <img class="objectFill" [src]="imageUrl.value"
@@ -130,7 +130,7 @@
     </div>
     <h3 class="saveRecipe">
       <button class="btn" routerLink="/recipes">Cancel</button>
-      <button class="btn" type="submit">Save</button>
+      <button class="btn" type="button" (click)="onSubmit(recipeForm.value, $event)" routerLink="/recipes">Save</button>
     </h3>
   </form>
 </div>

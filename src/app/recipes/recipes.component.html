@@ -1,6 +1,9 @@
 <div class="top-home">
+  <div class="filterRecipes">
+    <input type="text" [(ngModel)]="listFilter" placeholder="Search">
+  </div>
   <div class="top-trip">
-    <div class="item" *ngFor="let recipe of recipes">
+    <div class="item" *ngFor="let recipe of recipes | recipeFilter: listFilter">
       <div class="mask">
         <figure>
           <figcaption>

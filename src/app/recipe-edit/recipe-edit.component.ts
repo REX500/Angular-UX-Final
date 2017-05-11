@@ -4,6 +4,7 @@ import {Router, ActivatedRoute} from '@angular/router';
 import {Recipe} from '../shared/recipe';
 import {Ingredient} from '../shared/ingredient';
 import {RecipeService} from '../shared/recipe.service';
+import {RecipesComponent} from '../recipes/recipes.component';
 
 @Component({
   selector: 'app-recipe-edit',
@@ -17,17 +18,18 @@ export class RecipeEditComponent implements OnInit {
   submitted = false;
   selectedRecipe: Recipe;
   id: number;
-  edit_mode: boolean = false;
+  edit_mode = false;
 
   constructor(fb: FormBuilder,
               private router: Router,
               private route: ActivatedRoute,
-              private recipeService: RecipeService) {
+              private recipeService: RecipeService,
+  private  recipesComp: RecipesComponent) {
     this.recipeForm = fb.group({
-      name: [""],
-      imageUrl: [""],
-      description: [""],
-      directions: [""],
+      name: [''],
+      imageUrl: [''],
+      description: [''],
+      directions: [''],
       ingredients: this.ingredients
     });
   }
@@ -45,11 +47,11 @@ export class RecipeEditComponent implements OnInit {
         this.edit_mode = false;
         this.selectedRecipe = null;
       }
-    })
+    });
   }
 
   saveIngredients(amount: number, name: string, formIngredients) {
-    let ingredient = new Ingredient(name, amount);
+    const ingredient = new Ingredient(name, amount);
     if (name) {
       this.ingredients.push(ingredient);
       formIngredients.reset();
@@ -57,29 +59,33 @@ export class RecipeEditComponent implements OnInit {
   }
 
   deleteIngredient(ingredient) {
-    this.ingredients = this.ingredients.filter(i => i.name !== ingredient.name)
+    this.ingredients = this.ingredients.filter(i => i.name !== ingredient.name);
   }
 
-  onSubmit(value: any): void {
+  onSubmit(value: any, event: Event) {
+
+
     this.submitted = true;
 
-    let name = value.name;
-    let description = value.description;
-    let directions = value.directions;
-    let imageUrl = value.imageUrl;
-    let ingredients = this.ingredients;
+    const name = value.name;
+    const description = value.description;
+    const directions = value.directions;
+    const imageUrl = value.imageUrl;
+    const ingredients = this.ingredients;
 
-    this.recipeService.addRecipe(name, imageUrl, description, directions, ingredients).subscribe();
-    this.router.navigate(['recipes']);
+    this.recipesComp.addRecipe(name, imageUrl, description, directions, ingredients);
+
+    console.log(event);
+    event.preventDefault();
   }
 
   onUpdate(value: any) {
-    let newValue = {
-      "name": value.name,
-      "imageUrl": value.imageUrl,
-      "description": value.description,
-      "directions": value.directions,
-      "ingredients": this.ingredients
+    const newValue = {
+      'name': value.name,
+      'imageUrl': value.imageUrl,
+      'description': value.description,
+      'directions': value.directions,
+      'ingredients': this.ingredients
     };
     Object.assign(this.selectedRecipe, newValue);
     this.recipeService.updateRecipe(this.selectedRecipe).subscribe();
