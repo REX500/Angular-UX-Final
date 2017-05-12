@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router, ActivatedRoute} from '@angular/router';
 import {Recipe} from '../shared/recipe';
 import {Ingredient} from '../shared/ingredient';
@@ -15,7 +15,10 @@ export class RecipeEditComponent implements OnInit {
 
   ingredients: Ingredient[] = [];
   recipeForm: FormGroup;
+  ingredientsForm: FormGroup;
   submitted = false;
+  submittedIngredientForm = false;
+  submittedUpdateForm = false;
   selectedRecipe: Recipe;
   id: number;
   edit_mode = false;
@@ -24,13 +27,17 @@ export class RecipeEditComponent implements OnInit {
               private router: Router,
               private route: ActivatedRoute,
               private recipeService: RecipeService,
-  private  recipesComp: RecipesComponent) {
+              private  recipesComp: RecipesComponent) {
     this.recipeForm = fb.group({
-      name: [''],
-      imageUrl: [''],
-      description: [''],
-      directions: [''],
-      ingredients: this.ingredients
+      name: ['', <any>Validators.required],
+      imageUrl: ['', <any>Validators.required],
+      description: ['', <any>Validators.required],
+      directions: ['', <any>Validators.required],
+      ingredients: [this.ingredients]
+    });
+    this.ingredientsForm = fb.group({
+      amount: ['', <any>Validators.required],
+      name: ['', <any>Validators.required]
     });
   }
 
@@ -50,11 +57,15 @@ export class RecipeEditComponent implements OnInit {
     });
   }
 
-  saveIngredients(amount: number, name: string, formIngredients) {
-    const ingredient = new Ingredient(name, amount);
-    if (name) {
-      this.ingredients.push(ingredient);
-      formIngredients.reset();
+  saveIngredients(value: any, isValid: boolean, formIngredients) {
+    this.submittedIngredientForm = true;
+    if (isValid) {
+      const ingredient = new Ingredient(value.name, value.amount);
+      if (value.name) {
+        this.ingredients.push(ingredient);
+        formIngredients.reset();
+        this.submittedIngredientForm = false;
+      }
     }
   }
 
@@ -62,34 +73,35 @@ export class RecipeEditComponent implements OnInit {
     this.ingredients = this.ingredients.filter(i => i.name !== ingredient.name);
   }
 
-  onSubmit(value: any, event: Event) {
-
-
+  onSubmit(value: any, isValid: boolean, event: Event) {
     this.submitted = true;
+    if (isValid) {
+      const name = value.name;
+      const description = value.description;
+      const directions = value.directions;
+      const imageUrl = value.imageUrl;
+      const ingredients = this.ingredients;
 
-    const name = value.name;
-    const description = value.description;
-    const directions = value.directions;
-    const imageUrl = value.imageUrl;
-    const ingredients = this.ingredients;
-
-    this.recipesComp.addRecipe(name, imageUrl, description, directions, ingredients);
-
-    console.log(event);
-    event.preventDefault();
+      this.recipesComp.addRecipe(name, imageUrl, description, directions, ingredients);
+      event.preventDefault();
+      this.router.navigate(['recipes']);
+    }
   }
 
-  onUpdate(value: any) {
-    const newValue = {
-      'name': value.name,
-      'imageUrl': value.imageUrl,
-      'description': value.description,
-      'directions': value.directions,
-      'ingredients': this.ingredients
-    };
-    Object.assign(this.selectedRecipe, newValue);
-    this.recipeService.updateRecipe(this.selectedRecipe).subscribe();
-    this.router.navigate(['recipes']);
-  }
+  onUpdate(value: any, isValid: boolean) {
+    this.submittedUpdateForm = true;
+    if (isValid) {
 
+      const newValue = {
+        'name': value.name,
+        'imageUrl': value.imageUrl,
+        'description': value.description,
+        'directions': value.directions,
+        'ingredients': this.ingredients
+      };
+      Object.assign(this.selectedRecipe, newValue);
+      this.recipeService.updateRecipe(this.selectedRecipe).subscribe();
+      this.router.navigate(['recipes']);
+    }
+  }
 }

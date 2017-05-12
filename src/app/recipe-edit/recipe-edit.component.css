@@ -15,7 +15,7 @@ form {
 
 .group {
   position: relative;
-  margin-bottom: 35px;
+  margin-bottom: 15px;
   width: 70%;
   align-self: center;
 }
@@ -222,4 +222,27 @@ input {
     flex-direction: column;
   }
 
+}
+.errorText {
+  color: #b30000;
+  font-size: 16px;
+
+}
+.ingredientsError {
+  width: calc(100% * (1 / 2) - 15px);
+}
+button {
+  background: none;
+  padding: 0px;
+  border: none;
+}
+.errorPanel {
+  display: flex;
+  flex-direction: row;
+}
+.errorPanel .amountError {
+  justify-content: flex-start;
+}
+.errorPanel .nameError {
+  justify-content: flex-end;
 }
