@@ -17,6 +17,7 @@ import {RecipeEditComponent} from './recipe-edit/recipe-edit.component';
 import {RecipesComponent} from './recipes/recipes.component';
 import {RecipeService} from './shared/recipe.service';
 import {Routing} from './app.routing';
+import {PagerService} from "./shared/_services/pager.service";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import {Routing} from './app.routing';
     HttpModule,
     Routing
   ],
-  providers: [RecipeService],
+  providers: [RecipeService,PagerService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

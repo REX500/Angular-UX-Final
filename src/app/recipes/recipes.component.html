@@ -1,6 +1,7 @@
 <div class="top-home">
-  <div class="top-trip">
-    <div class="item" *ngFor="let recipe of recipes">
+  <div class="top-trip" id="toptrip">
+    <ul id="list">
+    <li class="item" *ngFor="let recipe of recipes">
       <div class="mask">
         <figure>
           <figcaption>
@@ -20,7 +21,8 @@
       <div class="item-inner">
         <img class="cardImage" src={{recipe.imageUrl}}/>
       </div>
-    </div>
+    </li>
+    </ul>
   </div>
 </div>
 
