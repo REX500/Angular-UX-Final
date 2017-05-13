@@ -110,7 +110,7 @@
               <div class="ingredientFields">
                 <div class="group space">
                   <label for="amount">Amount</label>
-                  <input id="amount" type="text" placeholder="Amount" [formControl]="ingredientsForm.controls['amount']" #amount/>
+                  <input id="amount" type="text" placeholder="Amount" [formControl]="ingredientsForm.controls['amount']" pattern="[0-9]+"  #amount/>
                   <span class="highlight"></span>
                   <span class="bar"></span>
                 </div>
@@ -160,7 +160,7 @@
         <div class="group">
           <label for="imageUrl">Image Url</label>
           <input id="imageUrl" type="text" placeholder="Image Url" [formControl]="recipeForm.controls['imageUrl']"
-                 #imageUrl/>
+                pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&\/\/=]*)" #imageUrl/>
           <span class="highlight"></span>
           <span class="bar"></span>
         </div>
