@@ -18,6 +18,7 @@ import {RecipesComponent} from './recipes/recipes.component';
 import {RecipeService} from './shared/recipe.service';
 import {Routing} from './app.routing';
 import {RecipeFilterPipe} from './recipes/recipe-filter.pipe';
+import {PagerService} from './shared/pager.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import {RecipeFilterPipe} from './recipes/recipe-filter.pipe';
     HttpModule,
     Routing
   ],
-  providers: [RecipeService, RecipesComponent],
+  providers: [RecipeService, RecipesComponent, PagerService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
