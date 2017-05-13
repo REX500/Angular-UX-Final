@@ -45,38 +45,6 @@
         }
       ],
       "id": 5
-    },
-    {
-      "name": "asd",
-      "imageUrl": "",
-      "description": "",
-      "directions": "",
-      "ingredients": [],
-      "id": 18
-    },
-    {
-      "name": "km",
-      "imageUrl": "",
-      "description": "",
-      "directions": "",
-      "ingredients": [],
-      "id": 22
-    },
-    {
-      "name": "km",
-      "imageUrl": "",
-      "description": "",
-      "directions": "",
-      "ingredients": [],
-      "id": 23
-    },
-    {
-      "name": "mk",
-      "imageUrl": "",
-      "description": "",
-      "directions": "",
-      "ingredients": [],
-      "id": 24
     }
   ]
 }

@@ -1,11 +1,14 @@
-$bgDefault      : #149a5f;
-$bgHighlight    : #23ba5c;
+$bgDefault      : rgba(205, 165, 156, 0.8);
+$bgHighlight    : rgba(205, 165, 156, 0.8);
 $colDefault     : #e9f0f2;
-$colHighlight   : #a5f2ab;
+$colHighlight   : rgba(110, 75, 74, 0.6);
 $dropDown       : false;
 .navbar-default {
   background-color: $bgDefault;
   border-color: $bgHighlight;
+  font-weight: bold;
+  font-size: 1.4em;
+  font-family: "Droid Sans", sans-serif;
   .navbar-brand {
     color: $colDefault;
     &:hover, &:focus {
@@ -149,4 +152,19 @@ body {
 
 .navbar {
  margin-bottom: 0 !important;
+}
+
+h3{
+  background-color: #CDA59C;
+}
+
+.copyright{
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.footer-label{
+  font-size: 1.4em;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }

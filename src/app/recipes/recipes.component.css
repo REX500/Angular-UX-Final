@@ -48,7 +48,7 @@ body {
 .top-home {
   padding: 2rem 3%;
   clear: both;
-  background: #ffffff;
+  background-color: rgba(232, 190, 182, 0.27);
   display: flex;
   flex-wrap: wrap;
   margin: -10px 0 0 -10px;
@@ -231,7 +231,7 @@ figure figcaption > a {
 
 figure p em {
   font-style: normal;
-  border: 2px solid #9CCC65;
+  border: 2px solid #E8BEB6;
   display: inline-block;
   padding: 0.2rem 1rem;
   text-shadow: 0 0 0 #000;
@@ -312,8 +312,8 @@ a.button:hover::after {
 
 @media only screen and (max-width: 520px) {
   figure p em {
-    border: 2px solid #9CCC65;
-    background: #9CCC65;
+    border: 2px solid #E8BEB6;
+    background: #E8BEB6;
   }
 
   .filterRecipes {
