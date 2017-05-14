@@ -1,0 +1,9 @@
+<app-recipe-carousel [interval]="NextPhotoInterval" [noWrap]="noLoopSlides">
+  <app-slide *ngFor="let slidez of slides; let index=index"
+         [active]="slidez.active">
+    <img [src]="slidez.image" style="margin:auto; max-height: 500px; width: 100%">
+    <div class="carousel-caption">
+      <h3 style="background-color: transparent;color: white;">{{slidez.text}}</h3>
+    </div>
+  </app-slide>
+</app-recipe-carousel>
